@@ -21,7 +21,7 @@ represented in order by 0 - 6
 pygame.font.init()
 
 # GLOBALS VARS
-s_width = 800
+s_width = 800     #das ist die scrren größe, playheight ist                       dann die "Rote box"
 s_height = 700
 play_width = 300  # meaning 300 // 10 = 30 width per block
 play_height = 600  # meaning 600 // 20 = 20 height per block
@@ -31,7 +31,7 @@ top_left_x = (s_width - play_width) // 2
 top_left_y = s_height - play_height
 
 
-# SHAPE FORMATS
+# SHAPE FORMATS, alle shapes und ihre rotations möglichkeiten
 
 S = [['.....',
       '......',
@@ -141,7 +141,12 @@ shape_colors = [(0, 255, 0), (255, 0, 0), (0, 255, 255), (255, 255, 0), (255, 16
 
 
 class Piece(object):
-    pass
+  def __init__(self, x, y, shape):
+    self.x = x
+    self.y = y 
+    self.shape = shape
+    self.color = shape_colors[shapes.index(shape)]
+    self.rotation = 0
 
 def create_grid(locked_positions={}):
     pass
